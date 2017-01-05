@@ -1,0 +1,52 @@
+.chevron {
+	position: relative;
+	padding-top: 38px;
+	padding-bottom: 15px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+.chevron:before {
+	z-index: -1;
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 50.1%;
+	-webkit-transform: skew(0deg, 3deg);
+	-moz-transform: skew(0deg, 3deg);
+	-ms-transform: skew(0deg, 3deg);
+	-o-transform: skew(0deg, 3deg);
+	transform: skew(0deg, 3deg);
+}
+.chevron:after {
+	z-index: -1;
+	content: '';
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 50.1%;
+	-webkit-transform: skew(0deg, -3deg);
+	-moz-transform: skew(0deg, -3deg);
+	-ms-transform: skew(0deg, -3deg);
+	-o-transform: skew(0deg, -3deg);
+	transform: skew(0deg, -3deg);
+}
+
+
+.chevron.white:before,
+.chevron.white:after {
+	background-color: white;
+}
+
+.chevron.red:before,
+.chevron.red:after {
+	background-color: darkred;
+}
+
+.chevron.black:before,
+.chevron.black:after {
+	background-color: #DDD;
+}
