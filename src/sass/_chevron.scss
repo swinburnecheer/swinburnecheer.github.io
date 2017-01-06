@@ -20,10 +20,6 @@ $chevron-angle-height: $chevron-tan-angle * 25%;
 		left: 0;
 		height: 100%;
 		width: 50.1%;
-		-webkit-transform: skew(0deg, $chevron-angle);
-		-moz-transform: skew(0deg, $chevron-angle);
-		-ms-transform: skew(0deg, $chevron-angle);
-		-o-transform: skew(0deg, $chevron-angle);
 		transform: skew(0deg, $chevron-angle);
 	}
 
@@ -36,10 +32,6 @@ $chevron-angle-height: $chevron-tan-angle * 25%;
 		right: 0;
 		height: 100%;
 		width: 50.1%;
-		-webkit-transform: skew(0deg, -$chevron-angle);
-		-moz-transform: skew(0deg, -$chevron-angle);
-		-ms-transform: skew(0deg, -$chevron-angle);
-		-o-transform: skew(0deg, -$chevron-angle);
 		transform: skew(0deg, -$chevron-angle);
 	}
 
