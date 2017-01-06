@@ -1,55 +1,49 @@
-$chevron-angle: 4deg;
-$chevron-tan-angle: 0.06992681194;
-$chevron-angle-height: $chevron-tan-angle * 25%;
+$chev-angle: 4deg;
+$chev-tan-angle: 0.06992681194;
+$chev-half-height: $chev-tan-angle * 25%;
+$chev-height: 2 * $chev-half-height;
+
+
+@mixin chevron-panel($bgColor) {
+	background-color: $bgColor;
+	z-index: -1;
+	content: '';
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 50.1%;
+}
 
 
 @mixin chevron($bgColor, $color) {
 	position: relative;
-	padding-top: $chevron-angle-height;
-	// padding-bottom: $chevron-angle-height;
-	margin-top: $chevron-angle-height;
-	margin-bottom: $chevron-angle-height;
+	padding-top: $chev-half-height;
+	// padding-bottom: $chev-half-height;
+	margin-top: $chev-half-height;
+	margin-bottom: $chev-half-height;
 	color: $color;
 
 	&:before {
-		background-color: $bgColor;
-		z-index: -1;
-		content: '';
-		position: absolute;
-		top: 0;
+		@include chevron-panel($bgColor);
 		left: 0;
-		height: 100%;
-		width: 50.1%;
-		transform: skew(0deg, $chevron-angle);
+		transform: skew(0deg, $chev-angle);
 	}
 
 	&:after {
-		background-color: $bgColor;
-		z-index: -1;
-		content: '';
-		position: absolute;
-		top: 0;
+		@include chevron-panel($bgColor);
 		right: 0;
-		height: 100%;
-		width: 50.1%;
-		transform: skew(0deg, -$chevron-angle);
+		transform: skew(0deg, -$chev-angle);
 	}
 
 	& > .chevron-head {
 		width: 100%;
-		margin-bottom: -2 * $chevron-angle-height;
+		margin-bottom: -$chev-height;
 		color: $color;
 
 		&:before {
-			background-color: $bgColor;
-			content: "";
-			margin-top: -1 * $chevron-angle-height;
-			background-color: white;
-			z-index: -1;
-			position: absolute;
-			top: 0;
+			@include chevron-panel($bgColor);
+			margin-top: -$chev-half-height;
 			left: 0;
-			height: 100%;
 			width: 100%;
 		}
 	}
