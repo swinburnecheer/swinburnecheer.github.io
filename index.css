@@ -7938,17 +7938,23 @@ p[class|=col] {
   line-height: 50px;
 }
 
+/**
+ * Chevron mixin
+ */
+/**
+ * Coloured classes
+ */
 .chevron-white {
   position: relative;
   padding-top: 1.7481703%;
-  margin-top: 1.7481703%;
-  margin-bottom: 1.7481703%;
+  padding-bottom: 1.7481703%;
+  margin-top: -1.7481703%;
+  margin-bottom: -1.7481703%;
   color: black;
 }
 
 .chevron-white:before {
   background-color: white;
-  z-index: -1;
   content: '';
   position: absolute;
   top: 0;
@@ -7963,7 +7969,6 @@ p[class|=col] {
 
 .chevron-white:after {
   background-color: white;
-  z-index: -1;
   content: '';
   position: absolute;
   top: 0;
@@ -7976,52 +7981,46 @@ p[class|=col] {
           transform: skew(0deg, -4deg);
 }
 
-.chevron-white > .chevron-head {
-  width: 100%;
-  margin-bottom: -3.4963406%;
-  color: black;
+.chevron-white.chevron-tail, .chevron-white.chevron-head {
+  background-color: white;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.chevron-white > .chevron-head:before {
-  background-color: white;
-  z-index: -1;
-  content: '';
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50.1%;
+.chevron-white.chevron-tail:before {
   margin-top: -1.7481703%;
-  width: 100%;
 }
 
-.chevron-white > .chevron-tail {
-  width: 100%;
-  color: black;
+.chevron-white.chevron-tail:after {
+  margin-top: -1.7481703%;
 }
 
-.chevron-white > .chevron-tail:before {
-  background-color: white;
-  z-index: -1;
-  content: '';
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50.1%;
+.chevron-white.chevron-head:before {
   margin-top: 1.7481703%;
-  width: 100%;
+}
+
+.chevron-white.chevron-head:after {
+  margin-top: 1.7481703%;
+}
+
+.chevron-white > * {
+  position: relative;
+  z-index: 1;
 }
 
 .chevron-black {
   position: relative;
   padding-top: 1.7481703%;
-  margin-top: 1.7481703%;
-  margin-bottom: 1.7481703%;
+  padding-bottom: 1.7481703%;
+  margin-top: -1.7481703%;
+  margin-bottom: -1.7481703%;
   color: white;
 }
 
 .chevron-black:before {
   background-color: black;
-  z-index: -1;
   content: '';
   position: absolute;
   top: 0;
@@ -8036,7 +8035,6 @@ p[class|=col] {
 
 .chevron-black:after {
   background-color: black;
-  z-index: -1;
   content: '';
   position: absolute;
   top: 0;
@@ -8049,52 +8047,46 @@ p[class|=col] {
           transform: skew(0deg, -4deg);
 }
 
-.chevron-black > .chevron-head {
-  width: 100%;
-  margin-bottom: -3.4963406%;
-  color: white;
+.chevron-black.chevron-tail, .chevron-black.chevron-head {
+  background-color: black;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.chevron-black > .chevron-head:before {
-  background-color: black;
-  z-index: -1;
-  content: '';
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50.1%;
+.chevron-black.chevron-tail:before {
   margin-top: -1.7481703%;
-  width: 100%;
 }
 
-.chevron-black > .chevron-tail {
-  width: 100%;
-  color: white;
+.chevron-black.chevron-tail:after {
+  margin-top: -1.7481703%;
 }
 
-.chevron-black > .chevron-tail:before {
-  background-color: black;
-  z-index: -1;
-  content: '';
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50.1%;
+.chevron-black.chevron-head:before {
   margin-top: 1.7481703%;
-  width: 100%;
+}
+
+.chevron-black.chevron-head:after {
+  margin-top: 1.7481703%;
+}
+
+.chevron-black > * {
+  position: relative;
+  z-index: 1;
 }
 
 .chevron-red {
   position: relative;
   padding-top: 1.7481703%;
-  margin-top: 1.7481703%;
-  margin-bottom: 1.7481703%;
+  padding-bottom: 1.7481703%;
+  margin-top: -1.7481703%;
+  margin-bottom: -1.7481703%;
   color: white;
 }
 
 .chevron-red:before {
   background-color: darkred;
-  z-index: -1;
   content: '';
   position: absolute;
   top: 0;
@@ -8109,7 +8101,6 @@ p[class|=col] {
 
 .chevron-red:after {
   background-color: darkred;
-  z-index: -1;
   content: '';
   position: absolute;
   top: 0;
@@ -8122,39 +8113,44 @@ p[class|=col] {
           transform: skew(0deg, -4deg);
 }
 
-.chevron-red > .chevron-head {
-  width: 100%;
-  margin-bottom: -3.4963406%;
-  color: white;
+.chevron-red.chevron-tail, .chevron-red.chevron-head {
+  background-color: darkred;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-.chevron-red > .chevron-head:before {
-  background-color: darkred;
-  z-index: -1;
-  content: '';
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50.1%;
+.chevron-red.chevron-tail:before {
   margin-top: -1.7481703%;
-  width: 100%;
 }
 
-.chevron-red > .chevron-tail {
-  width: 100%;
-  color: white;
+.chevron-red.chevron-tail:after {
+  margin-top: -1.7481703%;
 }
 
-.chevron-red > .chevron-tail:before {
-  background-color: darkred;
-  z-index: -1;
-  content: '';
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 50.1%;
+.chevron-red.chevron-head:before {
   margin-top: 1.7481703%;
-  width: 100%;
+}
+
+.chevron-red.chevron-head:after {
+  margin-top: 1.7481703%;
+}
+
+.chevron-red > * {
+  position: relative;
+  z-index: 1;
+}
+
+/**
+ * Other classes
+ */
+.above-chevron {
+  padding-bottom: 3.4963406%;
+}
+
+.below-chevron {
+  padding-top: 3.4963406%;
 }
 
 /*# sourceMappingURL=index.css.map */

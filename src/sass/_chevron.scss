@@ -4,9 +4,12 @@ $chev-half-height: $chev-tan-angle * 25%;
 $chev-height: 2 * $chev-half-height;
 
 
+/**
+ * Chevron mixin
+ */
+
 @mixin chevron-panel($bgColor) {
 	background-color: $bgColor;
-	z-index: -1;
 	content: '';
 	position: absolute;
 	top: 0;
@@ -18,9 +21,9 @@ $chev-height: 2 * $chev-half-height;
 @mixin chevron($bgColor, $color) {
 	position: relative;
 	padding-top: $chev-half-height;
-	// padding-bottom: $chev-half-height;
-	margin-top: $chev-half-height;
-	margin-bottom: $chev-half-height;
+	padding-bottom: $chev-half-height;
+	margin-top: -$chev-half-height;
+	margin-bottom: -$chev-half-height;
 	color: $color;
 
 	&:before {
@@ -35,30 +38,45 @@ $chev-height: 2 * $chev-half-height;
 		transform: skew(0deg, -$chev-angle);
 	}
 
-	& > .chevron-head {
-		width: 100%;
-		margin-bottom: -$chev-height;
-		color: $color;
+	&.chevron-tail, &.chevron-head {
+		background-color: $bgColor;
+		padding-top: 0;
+		padding-bottom: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
 
+	&.chevron-tail {
 		&:before {
-			@include chevron-panel($bgColor);
 			margin-top: -$chev-half-height;
-			width: 100%;
+		}
+
+		&:after {
+			margin-top: -$chev-half-height;
 		}
 	}
 
-	& > .chevron-tail {
-		width: 100%;
-		color: $color;
-
+	&.chevron-head {
 		&:before {
-			@include chevron-panel($bgColor);
 			margin-top: $chev-half-height;
-			width: 100%;
 		}
+
+		&:after {
+			margin-top: $chev-half-height;
+		}
+	}
+
+	// Display contents above the chevron
+	& > * {
+		position: relative;
+		z-index: 1;
 	}
 }
 
+
+/**
+ * Coloured classes
+ */
 
 .chevron-white {
 	@include chevron(white, black);
@@ -70,4 +88,17 @@ $chev-height: 2 * $chev-half-height;
 
 .chevron-red {
 	@include chevron(darkred, white);
+}
+
+
+/**
+ * Other classes
+ */
+
+.above-chevron {
+	padding-bottom: $chev-height;
+}
+
+.below-chevron {
+	padding-top: $chev-height;
 }
