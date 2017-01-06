@@ -2,14 +2,17 @@ $chevron-angle: 4deg;
 $chevron-tan-angle: 0.06992681194;
 $chevron-angle-height: $chevron-tan-angle * 25%;
 
-.chevron {
+
+@mixin chevron($bgColor, $color) {
 	position: relative;
 	padding-top: $chevron-angle-height;
 	// padding-bottom: $chevron-angle-height;
 	margin-top: $chevron-angle-height;
 	margin-bottom: $chevron-angle-height;
+	color: $color;
 
 	&:before {
+		background-color: $bgColor;
 		z-index: -1;
 		content: '';
 		position: absolute;
@@ -25,6 +28,7 @@ $chevron-angle-height: $chevron-tan-angle * 25%;
 	}
 
 	&:after {
+		background-color: $bgColor;
 		z-index: -1;
 		content: '';
 		position: absolute;
@@ -39,27 +43,13 @@ $chevron-angle-height: $chevron-tan-angle * 25%;
 		transform: skew(0deg, -$chevron-angle);
 	}
 
-	&.white:before,
-	&.white:after {
-		background-color: white;
-	}
-
-	&.red:before,
-	&.red:after {
-		background-color: darkred;
-	}
-
-	&.black:before,
-	&.black:after {
-		background-color: #DDD;
-	}
-
-
 	& > .chevron-head {
 		width: 100%;
 		margin-bottom: -2 * $chevron-angle-height;
+		color: $color;
 
 		&:before {
+			background-color: $bgColor;
 			content: "";
 			margin-top: -1 * $chevron-angle-height;
 			background-color: white;
@@ -71,4 +61,17 @@ $chevron-angle-height: $chevron-tan-angle * 25%;
 			width: 100%;
 		}
 	}
+}
+
+
+.chevron-white {
+	@include chevron(white, black);
+}
+
+.chevron-black {
+	@include chevron(black, white);
+}
+
+.chevron-red {
+	@include chevron(darkred, white);
 }
