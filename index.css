@@ -7991,7 +7991,23 @@ p[class|=col] {
   height: 100%;
   width: 50.1%;
   margin-top: -1.7481703%;
-  left: 0;
+  width: 100%;
+}
+
+.chevron-white > .chevron-tail {
+  width: 100%;
+  color: black;
+}
+
+.chevron-white > .chevron-tail:before {
+  background-color: white;
+  z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50.1%;
+  margin-top: 1.7481703%;
   width: 100%;
 }
 
@@ -8048,7 +8064,23 @@ p[class|=col] {
   height: 100%;
   width: 50.1%;
   margin-top: -1.7481703%;
-  left: 0;
+  width: 100%;
+}
+
+.chevron-black > .chevron-tail {
+  width: 100%;
+  color: white;
+}
+
+.chevron-black > .chevron-tail:before {
+  background-color: black;
+  z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50.1%;
+  margin-top: 1.7481703%;
   width: 100%;
 }
 
@@ -8105,7 +8137,23 @@ p[class|=col] {
   height: 100%;
   width: 50.1%;
   margin-top: -1.7481703%;
-  left: 0;
+  width: 100%;
+}
+
+.chevron-red > .chevron-tail {
+  width: 100%;
+  color: white;
+}
+
+.chevron-red > .chevron-tail:before {
+  background-color: darkred;
+  z-index: -1;
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 50.1%;
+  margin-top: 1.7481703%;
   width: 100%;
 }
 

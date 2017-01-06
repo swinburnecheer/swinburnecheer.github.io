@@ -43,7 +43,17 @@ $chev-height: 2 * $chev-half-height;
 		&:before {
 			@include chevron-panel($bgColor);
 			margin-top: -$chev-half-height;
-			left: 0;
+			width: 100%;
+		}
+	}
+
+	& > .chevron-tail {
+		width: 100%;
+		color: $color;
+
+		&:before {
+			@include chevron-panel($bgColor);
+			margin-top: $chev-half-height;
 			width: 100%;
 		}
 	}
