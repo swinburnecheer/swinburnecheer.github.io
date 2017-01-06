@@ -1,52 +1,74 @@
+$chevron-angle: 4deg;
+$chevron-tan-angle: 0.06992681194;
+$chevron-angle-height: $chevron-tan-angle * 25%;
+
 .chevron {
 	position: relative;
-	padding-top: 38px;
-	padding-bottom: 15px;
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
+	padding-top: $chevron-angle-height;
+	// padding-bottom: $chevron-angle-height;
+	margin-top: $chevron-angle-height;
+	margin-bottom: $chevron-angle-height;
 
-.chevron:before {
-	z-index: -1;
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 50.1%;
-	-webkit-transform: skew(0deg, 3deg);
-	-moz-transform: skew(0deg, 3deg);
-	-ms-transform: skew(0deg, 3deg);
-	-o-transform: skew(0deg, 3deg);
-	transform: skew(0deg, 3deg);
-}
-.chevron:after {
-	z-index: -1;
-	content: '';
-	position: absolute;
-	top: 0;
-	right: 0;
-	height: 100%;
-	width: 50.1%;
-	-webkit-transform: skew(0deg, -3deg);
-	-moz-transform: skew(0deg, -3deg);
-	-ms-transform: skew(0deg, -3deg);
-	-o-transform: skew(0deg, -3deg);
-	transform: skew(0deg, -3deg);
-}
+	&:before {
+		z-index: -1;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 50.1%;
+		-webkit-transform: skew(0deg, $chevron-angle);
+		-moz-transform: skew(0deg, $chevron-angle);
+		-ms-transform: skew(0deg, $chevron-angle);
+		-o-transform: skew(0deg, $chevron-angle);
+		transform: skew(0deg, $chevron-angle);
+	}
+
+	&:after {
+		z-index: -1;
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+		width: 50.1%;
+		-webkit-transform: skew(0deg, -$chevron-angle);
+		-moz-transform: skew(0deg, -$chevron-angle);
+		-ms-transform: skew(0deg, -$chevron-angle);
+		-o-transform: skew(0deg, -$chevron-angle);
+		transform: skew(0deg, -$chevron-angle);
+	}
+
+	&.white:before,
+	&.white:after {
+		background-color: white;
+	}
+
+	&.red:before,
+	&.red:after {
+		background-color: darkred;
+	}
+
+	&.black:before,
+	&.black:after {
+		background-color: #DDD;
+	}
 
 
-.chevron.white:before,
-.chevron.white:after {
-	background-color: white;
-}
+	& > .chevron-head {
+		width: 100%;
+		margin-bottom: -2 * $chevron-angle-height;
 
-.chevron.red:before,
-.chevron.red:after {
-	background-color: darkred;
-}
-
-.chevron.black:before,
-.chevron.black:after {
-	background-color: #DDD;
+		&:before {
+			content: "";
+			margin-top: -1 * $chevron-angle-height;
+			background-color: white;
+			z-index: -1;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+		}
+	}
 }
