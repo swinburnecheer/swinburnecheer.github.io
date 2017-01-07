@@ -71,6 +71,17 @@ $chev-height: 2 * $chev-half-height;
 		position: relative;
 		z-index: 1;
 	}
+
+	.chevron-body {
+	  padding-top: 20px;
+	  padding-bottom: 0px;
+
+		p {
+		  text-align: center;
+		  padding: 20px;
+		  font-size: 110%;
+		}
+	}
 }
 
 
