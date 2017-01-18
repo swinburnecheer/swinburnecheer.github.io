@@ -1,1 +1,12 @@
-$swin-red: #E21818;
+// Base colours
+$swin-red: darkred;
+$swin-grey: #333;
+$swin-white: white;
+
+// Colour combinations
+$panel-red-bg: $swin-red;
+$panel-red-text: $swin-white;
+$panel-grey-bg: $swin-grey;
+$panel-grey-text: $swin-white;
+$panel-white-bg: $swin-white;
+$panel-white-text: $swin-grey;

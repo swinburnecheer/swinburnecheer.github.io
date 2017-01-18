@@ -1,7 +1,10 @@
+@import "variables";
+
+// Control the angle of the chevron. Make sure to change both angle and tan-angle
 $chev-angle: 4deg;
 $chev-tan-angle: 0.06992681194;
 $chev-half-height: $chev-tan-angle * 25%;
-$chev-height: 2 * $chev-half-height;
+$chev-full-height: 2 * $chev-half-height;
 
 
 /**
@@ -20,10 +23,9 @@ $chev-height: 2 * $chev-half-height;
 
 @mixin chevron($bgColor, $color) {
 	position: relative;
-	padding-top: $chev-half-height;
-	padding-bottom: $chev-half-height;
-	margin-top: -$chev-half-height;
-	margin-bottom: -$chev-half-height;
+	padding-top: $chev-full-height + $chev-half-height;
+	padding-bottom: $chev-full-height;
+	margin-top: -1px;
 	color: $color;
 
 	&:before {
@@ -71,17 +73,6 @@ $chev-height: 2 * $chev-half-height;
 		position: relative;
 		z-index: 1;
 	}
-
-	.chevron-body {
-	  padding-top: 20px;
-	  padding-bottom: 0px;
-
-		p {
-		  text-align: center;
-		  padding: 20px;
-		  font-size: 110%;
-		}
-	}
 }
 
 
@@ -90,15 +81,15 @@ $chev-height: 2 * $chev-half-height;
  */
 
 .chevron-white {
-	@include chevron(white, black);
+	@include chevron($panel-white-bg, $panel-white-text);
 }
 
 .chevron-black {
-	@include chevron(black, white);
+	@include chevron($panel-grey-bg, $panel-grey-text);
 }
 
 .chevron-red {
-	@include chevron(darkred, white);
+	@include chevron($panel-red-bg, $panel-red-text);
 }
 
 
@@ -106,10 +97,13 @@ $chev-height: 2 * $chev-half-height;
  * Other classes
  */
 
-.above-chevron {
-	padding-bottom: $chev-height;
-}
+.chevron-banner {
+	padding-top: $chev-full-height;
+	padding-bottom: $chev-half-height;
 
-.below-chevron {
-	padding-top: $chev-height;
+	p {
+		text-align: center;
+		padding: 20px;
+		font-size: 110%;
+	}
 }
