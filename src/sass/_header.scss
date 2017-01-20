@@ -1,23 +1,14 @@
-$header-height-md: 65px;
-$header-height-sm: 50px;
+$header-height: 65px;
 
-@mixin header-adapt-height {
-  @media (max-width: $screen-md-max) {
-    height: $header-height-md;
-    line-height: $header-height-md - 30px;
-  }
-
-  @media (max-width: $screen-sm-max) {
-    height: $header-height-sm;
-    line-height: $header-height-sm - 30px;
-  }
+.header-wrapper {
+  padding-bottom: 20px;
 }
 
 .header {
   .page-title {
     font-family: 'Graduate', arial, sans-serif;
     font-weight: bold;
-    color: #E21818;
+    color: $swin-red-bright;
     text-align: center;
     margin-bottom: 30px;
     margin-top: 30px;
@@ -26,11 +17,7 @@ $header-height-sm: 50px;
   .page-icon {
     width: 100%;
     height: 100%;
-    padding: 8px 0;
-
-    @media (max-width: $screen-sm-max) {
-      padding: 3px 0;
-    }
+    padding: 8px 0 3px;
 
     img {
       height: 100%;
@@ -40,29 +27,31 @@ $header-height-sm: 50px;
   }
 
   .header-item {
-    @include header-adapt-height;
+    @media (max-width: $screen-md-max) {
+      height: $header-height;
+      line-height: $header-height;
+    }
   }
 }
 
-.nav li a {
-  @include header-adapt-height;
-
-  /*font-family: 'Graduate', arial, sans-serif;*/
-  padding: {
-    top: 15px;
-    bottom: 15px;
-    left: 0;
-    right: 0;
-  };
-  font-size: 110%;
-  color: $swin-red;
-  text-transform: capitalize;
+.nav li {
+  height: $header-height;
+  line-height: $header-height;
   text-align: center;
+}
 
+.nav li a {
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: middle;
 
+  font-family: 'Graduate', arial, sans-serif;
+  font-size: 130%;
+  color: $swin-red-bright;
+  text-transform: capitalize;
 
   &:hover, &:focus {
-    background-color: $swin-red;
-    color: white;
+    background-color: transparent;
+    color: $swin-white;
   }
 }
