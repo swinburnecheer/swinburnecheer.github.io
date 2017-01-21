@@ -28,27 +28,30 @@ $chev-full-height: 2 * $chev-half-height;
 	margin-top: -1px;
 	color: $color;
 
+	// Left chevron panel
 	&:before {
 		@include chevron-panel($bgColor);
 		left: 0;
 		transform: skew(0deg, $chev-angle);
 	}
 
+	// Right chevron panel
 	&:after {
 		@include chevron-panel($bgColor);
 		right: 0;
 		transform: skew(0deg, -$chev-angle);
 	}
 
+	// Tail and head styles
 	&.chevron-tail, &.chevron-head {
 		background-color: $bgColor;
 		padding-top: 0;
 		padding-bottom: 0;
-		margin-top: 0;
-		margin-bottom: 0;
 	}
 
 	&.chevron-tail {
+		margin-top: $chev-half-height;
+
 		&:before {
 			margin-top: -$chev-half-height;
 		}
@@ -59,6 +62,8 @@ $chev-full-height: 2 * $chev-half-height;
 	}
 
 	&.chevron-head {
+		margin-bottom: $chev-half-height;
+
 		&:before {
 			margin-top: $chev-half-height;
 		}
@@ -106,4 +111,11 @@ $chev-full-height: 2 * $chev-half-height;
 		padding: 20px;
 		font-size: 110%;
 	}
+}
+
+.chevron-shape {
+	position: relative;
+	z-index: -1;
+	margin-top: -$chev-half-height;
+	margin-bottom: -$chev-half-height;
 }
