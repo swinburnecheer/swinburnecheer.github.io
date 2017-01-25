@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -89,35 +92,21 @@
   <div id="home" class="chevron-white">
     <div class="container triple-detail">
       <div class="row">
-        <div class="col-xs-12 col-md-4 detail">
-          <div class="icon">
-            <img src="images/get-fit-icon.JPG">
+        {% for item in site.data.content.home.items %}
+          <div class="col-xs-12 col-md-4 detail">
+            <div class="icon">
+              {% if item.imgName %}
+                <img src="images/{{ item.imgName }}">
+              {% endif %}
+            </div>
+            <h2 class="title">
+              {{ item.title }}
+            </h2>
+            <p class="caption">
+              {{ item.caption }}
+            </p>
           </div>
-          <h2 class="title">Get Fit</h2>
-          <p class="caption">
-            Cheerleading is an intense mix of cardio and strength. Nothing compares to the thrill you get when your heart is beating on the competition floor.
-          </p>
-        </div>
-
-        <div class="col-xs-12 col-md-4 detail">
-          <div class="icon">
-            <img src="images/make-friends-icon.JPG">
-          </div>
-          <h2 class="title">Make Friends</h2>
-          <p class="caption">
-            Cheer friends are real friends; you trust them, you sweat with them, you do everything as a team.
-          </p>
-        </div>
-
-        <div class="col-xs-12 col-md-4 detail">
-          <div class="icon">
-            <img src="images/have-fun-icon.JPG">
-          </div>
-          <h2 class="title">Have fun</h2>
-          <p class="caption">
-            Once you start cheer you will get addicted.
-          </p>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>

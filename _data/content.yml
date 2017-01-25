@@ -1,0 +1,29 @@
+# This section contains a list of reasons to join the team
+# and is displayed right beneath the main banner.
+home:
+  items:
+    -
+      # The title is displayed right beneath the image,
+      # keep this fairly short
+      title: Get Fit
+      # The path to the image from the images directory
+      # In other words its the name of the image if it is
+      # in the images folder (where all the images should be).
+      # If it is in a subfolder, eg the image is in the
+      # 'home' folder inside the images folder, then prefix
+      # the file name with the folder, eg home/picture.JPG
+      imgName: get-fit-icon.JPG
+      # This is the caption beneath the title. For visual
+      # reasons try to keep all captions the same length.
+      # Note: The arrow (>) beneath is important, don't move it
+      caption: |
+        Cheerleading is an intense mix of cardio and strength.
+        Nothing compares to the thrill you get when your heart is beating on the competition floor.
+    - title: Make Friends
+      imgName: make-friends-icon.JPG
+      caption: |
+        Cheer friends are real friends; you trust them, you sweat with them, you do everything as a team.
+    - title: Have Fun
+      imgName: have-fun-icon.JPG
+      caption: |
+        Once you start cheer you will get addicted.
