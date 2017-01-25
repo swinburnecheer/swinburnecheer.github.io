@@ -15,7 +15,7 @@ home:
       imgName: get-fit-icon.JPG
       # This is the caption beneath the title. For visual
       # reasons try to keep all captions the same length.
-      # Note: The arrow (>) beneath is important, don't move it
+      # Note: The pipe (|) beneath is important, don't move it
       caption: |
         Cheerleading is an intense mix of cardio and strength.
         Nothing compares to the thrill you get when your heart is beating on the competition floor.
