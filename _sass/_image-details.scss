@@ -4,9 +4,14 @@
   padding-top: 25px;
   padding-bottom: 25px;
 
-  .image img {
-    max-width: 100%;
-    max-height: 400px;
+  .image {
+    overflow: hidden;
+
+    img {
+      height: 210px;
+      margin-left: 50%;
+      transform: translate(-50%, 0)
+    }
   }
 
   .details {
