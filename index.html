@@ -61,6 +61,9 @@
               <li class="col-xs-3">
                 <a href="#signup">Sign Up!</a>
               </li>
+              <li class="col-xs-3">
+                <a href="#contact">Contact</a>
+              </li>
             </ul>
           </nav>
         </header>
@@ -199,9 +202,41 @@
   </div>
 
 
-  <div class="chevron-black chevron-tail">
-    <div style="height: 400px"></div>
-  </div>
+  <footer id="contact" class="chevron-black chevron-tail">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Contact us</h1>
+          <p>
+            Have a question? Not sure if you want to join the team yet? Want to organise an event with us? Send us an email or contact us on Facebook and we'll be able to help you out!
+          </p>
+          <p class="social-media-links">
+            {% if site.data.contact.facebook %}
+              <a class="facebook" href="https://www.facebook.com/{{ site.data.contact.facebook | uri_escape }}">
+                facebook.com/{{ site.data.contact.facebook | escape }}
+              </a>
+            {% endif %}
+
+            {% if site.data.contact.instagram %}
+              <a class="instagram" href="https://www.instagram.com/{{ site.data.contact.instagram | uri_escape }}">
+                instagram.com/{{ site.data.contact.instagram | escape }}
+              </a>
+            {% endif %}
+
+            {% if site.data.contact.email %}
+              <a class="email" href="mailto:{{ site.data.contact.email | uri_escape }}">
+                {{ site.data.contact.email | escape }}
+              </a>
+            {% endif %}
+          </p>
+
+          <p class="muted">
+            Website designed and developed by James Ferguson (<a href="mailto:contact@jamesferguson.info">contact@jamesferguson.info</a>)
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
   <!-- Vendor js -->
