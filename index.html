@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -31,8 +34,8 @@
   <!-- <link href="vendor.css" rel="stylesheet"> -->
 
   <!-- Styles -->
-  <link href="index.css" rel="stylesheet">
-  <link href="index.css.map" rel="stylesheet">
+  <link href="css/index.css" rel="stylesheet">
+  <!-- <link href="index.css.map" rel="stylesheet"> -->
 </head>
 <body>
   <!-- Header -->
@@ -55,14 +58,11 @@
               <li class="col-xs-3">
                 <a href="#what-is-cheer">What is Cheer?</a>
               </li>
-              <!-- <li> -->
-                <!-- <a href="#" class="col-xs-3">Our Team</a> -->
-              <!-- </li> -->
-              <li class="col-xs-3">
-                <a href="#gallery">Gallery</a>
-              </li>
               <li class="col-xs-3">
                 <a href="#signup">Sign Up!</a>
+              </li>
+              <li class="col-xs-3">
+                <a href="#contact">Contact</a>
               </li>
             </ul>
           </nav>
@@ -89,35 +89,21 @@
   <div id="home" class="chevron-white">
     <div class="container triple-detail">
       <div class="row">
-        <div class="col-xs-12 col-md-4 detail">
-          <div class="icon">
-            <img src="images/get-fit-icon.JPG">
+        {% for item in site.data.content.home.items %}
+          <div class="col-xs-12 col-md-4 detail">
+            <div class="icon">
+              {% if item.imgName %}
+                <img src="images/{{ item.imgName }}">
+              {% endif %}
+            </div>
+            <h2 class="title">
+              {{ item.title }}
+            </h2>
+            <p class="caption">
+              {{ item.caption }}
+            </p>
           </div>
-          <h2 class="title">Get Fit</h2>
-          <p class="caption">
-            Cheerleading is an intense mix of cardio and strength. Nothing compares to the thrill you get when your heart is beating on the competition floor.
-          </p>
-        </div>
-
-        <div class="col-xs-12 col-md-4 detail">
-          <div class="icon">
-            <img src="images/make-friends-icon.JPG">
-          </div>
-          <h2 class="title">Make Friends</h2>
-          <p class="caption">
-            Cheer friends are real friends; you trust them, you sweat with them, you do everything as a team.
-          </p>
-        </div>
-
-        <div class="col-xs-12 col-md-4 detail">
-          <div class="icon">
-            <img src="images/have-fun-icon.JPG">
-          </div>
-          <h2 class="title">Have fun</h2>
-          <p class="caption">
-            Once you start cheer you will get addicted.
-          </p>
-        </div>
+        {% endfor %}
       </div>
     </div>
   </div>
@@ -126,12 +112,8 @@
   <div id="what-is-cheer" class="chevron-red chevron-banner">
     <div class="container chevron-body">
       <div class="row">
-        <h2>What is Cheerleading?</h2>
-        <p>
-          Cheerleading is an intense team sport where each team competes on a 9-run sprung floor for two and half minutes.
-          <br>
-          Each routine is made up of three major components: stunting, tumbling and chant.
-        </p>
+        <h2>{{ site.data.content.whatIsCheer.title }}</h2>
+        {{ site.data.content.whatIsCheer.description | markdownify }}
       </div>
     </div>
   </div>
@@ -139,47 +121,23 @@
   <!-- Photo and details -->
   <div class="chevron-white">
     <div class="container">
-      <div class="row image-details left">
-        <div class="col-xs-5 image">
-          <img src="images/stunting.JPG">
+      {% for item in site.data.content.whatIsCheer.items %}
+          <div class="row image-details">
+            <div class="col-xs-12 col-sm-5 image">
+              <img src="images/{{ item.imgName }}">
+            </div>
+            <div class="col-xs-12 col-sm-7 details">
+              <h2>{{ item.title }}</h2>
+              {{ item.caption | markdownify }}
+            </div>
         </div>
-        <div class="col-xs-7 details">
-          <h2>Stunting</h2>
-          <p>
-            This is the bread and butter of a cheerleading routine. It takes up the majority of the time and is worth the most points. A single stunt is made up of one flyer and one to three bases. They are often chained together to form smooth sequences or conducted simultaneously by multiple groups. When groups connect while they are in a stunt it becomes a pyramid and allows for more difficult stunts to be performed.
-          </p>
-        </div>
-      </div>
-
-      <div class="row image-details right">
-        <div class="col-xs-7 details">
-          <h2>Tumbling</h2>
-          <p>
-            Tumbling is weaved inbetween stunting and is sometimes used as a transition but every routine has a dedicated tumble section. Points are awarded for having majority tumbling which means that most of the team performs a certain skill and for specailty tumbling passes made up of multiple skills.
-          </p>
-        </div>
-        <div class="col-xs-5 image">
-          <img src="images/tumbling.JPG">
-        </div>
-      </div>
-
-      <div class="row image-details left">
-        <div class="col-xs-5 image">
-          <img src="images/chant.JPG">
-        </div>
-        <div class="col-xs-7 details">
-          <h2>Chant</h2>
-          <p>
-            The chant section is unique to each university and often goes at the start of the routine but can be placed anywhere. The music stops during chant and the entire team attempts to get the audience to join in with them. Mixed in with chant is a dash of tumbling and stunting.
-          </p>
-        </div>
-      </div>
+      {% endfor %}
     </div>
   </div>
 
 
   <!-- Gallery -->
-  <div  id="gallery" class="chevron-red chevron-banner">
+  <!-- <div  id="gallery" class="chevron-red chevron-banner">
     <div class="container chevron-body">
       <div class="row">
         <h2>Gallery</h2>
@@ -188,7 +146,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
   <!-- Sign up now -->
@@ -244,12 +202,44 @@
   </div>
 
 
-  <div class="chevron-black chevron-tail">
-    <div style="height: 400px"></div>
-  </div>
+  <footer id="contact" class="chevron-black chevron-tail">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>Contact us</h1>
+          <p>
+            Have a question? Not sure if you want to join the team yet? Want to organise an event with us? Send us an email or contact us on Facebook and we'll be able to help you out!
+          </p>
+          <p class="social-media-links">
+            {% if site.data.contact.facebook %}
+              <a class="facebook" href="https://www.facebook.com/{{ site.data.contact.facebook | uri_escape }}">
+                facebook.com/{{ site.data.contact.facebook | escape }}
+              </a>
+            {% endif %}
+
+            {% if site.data.contact.instagram %}
+              <a class="instagram" href="https://www.instagram.com/{{ site.data.contact.instagram | uri_escape }}">
+                instagram.com/{{ site.data.contact.instagram | escape }}
+              </a>
+            {% endif %}
+
+            {% if site.data.contact.email %}
+              <a class="email" href="mailto:{{ site.data.contact.email | uri_escape }}">
+                {{ site.data.contact.email | escape }}
+              </a>
+            {% endif %}
+          </p>
+
+          <p class="muted">
+            Website designed and developed by James Ferguson (<a href="mailto:contact@jamesferguson.info">contact@jamesferguson.info</a>)
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 
 
   <!-- Vendor js -->
-  <script src="vendor.js"></script>
+  <!-- <script src="vendor.js"></script> -->
 </body>
 </html>

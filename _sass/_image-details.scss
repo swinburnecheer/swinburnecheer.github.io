@@ -1,0 +1,38 @@
+/** Image and details **/
+
+.image-details {
+  padding-top: 25px;
+  padding-bottom: 25px;
+
+  .image {
+    overflow: hidden;
+
+    img {
+      height: 210px;
+      margin-left: 50%;
+      transform: translate(-50%, 0)
+    }
+  }
+
+  .details {
+    padding-top: 15px;
+
+    h2 {
+      text-align: left;
+    }
+  }
+
+  @media (min-width: $screen-md-min) {
+    &:nth-child(2) {
+      .image {
+        float: right;
+      }
+
+      .details {
+        h2, p {
+          text-align: right;
+        }
+      }
+    }
+  }
+}

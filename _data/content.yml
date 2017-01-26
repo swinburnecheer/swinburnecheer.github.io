@@ -1,0 +1,50 @@
+# This section contains a list of reasons to join the team
+# and is displayed right beneath the main banner.
+home:
+  items:
+    -
+      # The title is displayed right beneath the image,
+      # keep this fairly short
+      title: Get Fit
+      # The path to the image from the images directory
+      # In other words its the name of the image if it is
+      # in the images folder (where all the images should be).
+      # If it is in a subfolder, eg the image is in the
+      # 'home' folder inside the images folder, then prefix
+      # the file name with the folder, eg home/picture.JPG
+      imgName: get-fit-icon.JPG
+      # This is the caption beneath the title. For visual
+      # reasons try to keep all captions the same length.
+      # Note: The pipe (|) beneath is important, don't move it
+      caption: |
+        Cheerleading is an intense mix of cardio and strength.
+        Nothing compares to the thrill you get when your heart is beating on the competition floor.
+    - title: Make Friends
+      imgName: make-friends-icon.JPG
+      caption: |
+        Cheer friends are real friends; you trust them, you sweat with them, you do everything as a team.
+    - title: Have Fun
+      imgName: have-fun-icon.JPG
+      caption: |
+        Once you start cheer you will get addicted.
+
+
+whatIsCheer:
+  title: What is Cheerleading?
+  description: |
+    Cheerleading is an intense team sport where each team competes on a 9-run sprung floor for two and half minutes.
+
+    Each routine is made up of three major components: stunting, tumbling and chant.
+  items:
+    - title: Stunting
+      imgName: stunting.JPG
+      caption: |
+        This is the bread and butter of a cheerleading routine. It takes up the majority of the time and is worth the most points. A single stunt is made up of one flyer and one to three bases. They are often chained together to form smooth sequences or conducted simultaneously by multiple groups. When groups connect while they are in a stunt it becomes a pyramid and allows for more difficult stunts to be performed.
+    - title: Tumbling
+      imgName: tumbling.JPG
+      caption: |
+        Tumbling is weaved inbetween stunting and is sometimes used as a transition but every routine has a dedicated tumble section. Points are awarded for having majority tumbling which means that most of the team performs a certain skill and for specailty tumbling passes made up of multiple skills.
+    - title: Chant
+      imgName: chant.JPG
+      caption: |
+        The chant section is unique to each university and often goes at the start of the routine but can be placed anywhere. The music stops during chant and the entire team attempts to get the audience to join in with them. Mixed in with chant is a dash of tumbling and stunting.
