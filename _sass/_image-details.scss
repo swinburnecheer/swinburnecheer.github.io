@@ -22,14 +22,16 @@
     }
   }
 
-  &:nth-child(2) {
-    .image {
-      float: right;
-    }
+  @media (min-width: $screen-md-min) {
+    &:nth-child(2) {
+      .image {
+        float: right;
+      }
 
-    .details {
-      h2, p {
-        text-align: right;
+      .details {
+        h2, p {
+          text-align: right;
+        }
       }
     }
   }

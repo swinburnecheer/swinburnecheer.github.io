@@ -126,10 +126,10 @@
     <div class="container">
       {% for item in site.data.content.whatIsCheer.items %}
           <div class="row image-details">
-            <div class="col-xs-5 image">
+            <div class="col-xs-12 col-sm-5 image">
               <img src="images/{{ item.imgName }}">
             </div>
-            <div class="col-xs-7 details">
+            <div class="col-xs-12 col-sm-7 details">
               <h2>{{ item.title }}</h2>
               {{ item.caption | markdownify }}
             </div>
