@@ -11,15 +11,21 @@
 
   .details {
     padding-top: 15px;
+
+    h2 {
+      text-align: left;
+    }
   }
 
-  &.left .details h2,
-  &.left .details p {
-    text-align: left;
-  }
+  &:nth-child(2) {
+    .image {
+      float: right;
+    }
 
-  &.right .details h2,
-  &.right .details p {
-    text-align: right;
+    .details {
+      h2, p {
+        text-align: right;
+      }
+    }
   }
 }
